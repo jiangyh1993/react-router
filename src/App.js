@@ -11,6 +11,14 @@ const About = () => {
   return <h1>About</h1>;
 };
 
+const Topic = ({ match }) => {
+  return (
+    <div>
+      <h3>{match.params.topicId}</h3>
+    </div>
+  );
+};
+
 const Topics = ({ match }) => {
   return (
     <div>
@@ -27,7 +35,7 @@ const Topics = ({ match }) => {
         </li>
       </ul>
 
-      <Route path={`${match.path}/:topicId`} component={Topics} />
+      <Route path={`${match.path}/:topicId`} component={Topic} />
       <Route
         exact
         path={match.path}
